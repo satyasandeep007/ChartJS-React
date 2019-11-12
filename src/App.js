@@ -30,8 +30,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Intern Assignment</h1>
-        {/* <Fetch results={this.state.results} isLoaded={this.state.isLoaded} error={this.state.error}/> */}
+        <h1>Form Chart by data from API</h1>
+        <Fetch results={this.state.results} isLoaded={this.state.isLoaded} error={this.state.error}/>
         <Charts results={this.state.results}  />
       </div>
     )

@@ -6,6 +6,7 @@ export default class Charts extends Component {
         const { results } = this.props;
         return (
             <div className="chart-main">
+                
                 {results.map(chart => {
                     return <Chart width={'100%'} height={'100%'} max-width={'100%'} chartType="Timeline"
                         data={[

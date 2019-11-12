@@ -4,6 +4,7 @@ import Item from "./Item";
 export default class Fetch extends Component {
 
     render() {
+
         const { error, isLoaded, results } = this.props;
         if (error) {
             return <div>Error: {error.message}</div>;
@@ -12,6 +13,7 @@ export default class Fetch extends Component {
         } else {
             return (
                 <div className="fetch-main">
+                    
                     <ul>
                         {results.map(item => (
                             <Item id={item.id} name={item.name}
