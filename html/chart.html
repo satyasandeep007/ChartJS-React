@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['timeline'] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var container = document.getElementById('timeline');
+            var chart = new google.visualization.Timeline(container);
+            var dataTable = new google.visualization.DataTable();
+
+            dataTable.addColumn({ type: 'string', id: 'Role' });
+            dataTable.addColumn({ type: 'string', id: 'Name' });
+            dataTable.addColumn({ type: 'date', id: 'Start' });
+            dataTable.addColumn({ type: 'date', id: 'End' });
+            dataTable.addRows([
+                ['President', 'Washington', new Date(0, 08, 1, 10), new Date(0, 08, 7, 12)],
+                ['President', 'Jefferson', new Date(0, 08, 7, 12), new Date(0, 08, 21, 13)],
+                ['President', 'Jefferson', new Date(0, 08, 21), new Date(0, 08, 30)],
+                ['President', 'Adams', new Date(0, 08, 8), new Date(0, 08, 20)],
+                ['President', 'Jefferson', new Date(0, 08, 21), new Date(0, 08, 30)]]);
+            var options = {
+                timeline: { groupByRowLabel: false ,  colorByRowLabel: true }
+                
+            };
+            chart.draw(dataTable, options);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="timeline" style="height: 100%;width: 100%;"></div>
+</body>
+
+</html>

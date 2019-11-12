@@ -3,8 +3,9 @@ html, body {
   padding: 0%;
   height: 100%;
   width: 100%;
+  justify-content: center;
+  align-self: center;
 }
-
 h1 {
   text-align: center;
   background-color: darkcyan;
@@ -13,4 +14,20 @@ h1 {
 }
 .fetch-main ul li {
   list-style: none;
+}
+.main  {
+  display: flex;
+  flex-direction: row;
+}
+.sideone {
+  flex: 1;
+  width: 50%;
+}
+.sidetwo{
+  flex: 1;
+  width: 50%; 
+}
+.chart-main {
+  width: 100%;
+  max-width: 100%;
 }

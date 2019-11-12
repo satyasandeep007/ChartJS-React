@@ -1,37 +1,10 @@
 import React, { Component } from 'react';
+import Item from "./Item";
 
 export default class Fetch extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            error: null,
-            isLoaded: false,
-            results: []
-        };
-    }
-
-    componentDidMount() {
-        fetch("https://raw.githubusercontent.com/satyasandeep007/api-total-cloud/master/intern.json")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        results: result.results
-                    });
-                },
-
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                }
-            )
-    }
 
     render() {
-        const { error, isLoaded, results } = this.state;
+        const { error, isLoaded, results } = this.props;
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
@@ -41,12 +14,8 @@ export default class Fetch extends Component {
                 <div className="fetch-main">
                     <ul>
                         {results.map(item => (
-                            <li key={item.id}>
-                                <div>{item.id}</div>
-                                <div>{item.name}</div>
-                                <div>{item.start}</div>
-                                <div>{item.end}</div>
-                            </li>
+                            <Item id={item.id} name={item.name}
+                                start={item.start} end={item.end} />
                         ))}
                     </ul>
                 </div>
